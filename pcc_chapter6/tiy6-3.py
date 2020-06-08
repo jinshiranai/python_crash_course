@@ -14,3 +14,16 @@ print(f"Key-Value Pair:\n\t{glossary['key-value pair']}.\n")
 print(f"Conditional Test:\n\t{glossary['conditional test']}.\n")
 print(f"Boolean Value:\n\t{glossary.get('boolean value')}.\n")
 print(f"Common Sense:\n\t{glossary.get('common sense')}.\n")
+
+# 6-4.
+for term, definition in glossary.items():
+    print(f"{term.title()}:\n\t{definition}.\n")
+
+glossary['distraction'] = 'Anything that keeps the programmer from focusing on the task at hand'
+glossary['flow'] = 'A state in which time and material things become meaningless and the code pours forth'
+glossary['battlestation'] = "A programmer's physical workspace"
+glossary['fatigue'] = 'A debuff easily cured with energy drinks'
+glossary['debugging'] = 'Main cause of gray hairs in programmers'
+
+for term, definition in sorted(glossary.items()):
+    print(f"{term.title()}:\n\t{definition}.\n")
