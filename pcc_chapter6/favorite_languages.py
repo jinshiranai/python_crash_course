@@ -54,3 +54,24 @@ for pollster in pollsters:
         print(f"Thank you for taking our poll, {pollster.title()}.")
     else:
         print(f"Time is running out, {pollster.title()}. You know what to do. Take the poll.")
+print('\n')
+
+# Nesting a list in a dictionary to store multiple favorites.
+favorite_languages = {
+    'jen': ['python', 'ruby'],
+    'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+    }
+
+for name, languages in favorite_languages.items():
+    if len(languages) == 1:
+        print(f"\n{name.title()}'s favorite language is:")
+        for language in languages:
+            print(f"\t{language.title()}")
+    else:
+        print(f"\n{name.title()}'s favorite languages are:")
+        for language in languages:
+            print(f"\t{language.title()}")
+
+# Added an original if-else block to print singluar or plural as needed.
