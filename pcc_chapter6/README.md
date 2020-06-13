@@ -17,8 +17,8 @@ I used that sample code for the final Try It Yourself exercise of the chapter. T
   The result took thirteen lines of code that summarized a pizza order and turned it into
   taking a user's actual pizza order from crust type to final toppings and summarizing -that-.
   
-![output image 1 of 2 for pizza.py](https://raw.githubusercontent.com/jinshiranai/python_crash_course/master/pcc_chapter6/pizza_dot_py_output1.png)
-![output image 2 of 2 for pizza.py](https://raw.githubusercontent.com/jinshiranai/python_crash_course/master/pcc_chapter6/pizza_dot_py_output2.png)
+![output image 1 of 2 for pizza.py](pizza_dot_py_output1.png)
+![output image 2 of 2 for pizza.py](pizza_dot_py_output2.png)
 
 At the time of writing, this is the accomplishment I'm most proud of.
 Though that will probably change once I get to the projects section of the book.
