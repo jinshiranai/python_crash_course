@@ -19,3 +19,5 @@ Lines 50 to 58 were the original sample code, but I wanted the user to be able t
     the original functionality of the demo code and rendered line 58 unreachable. I'd like to fix
     that at some point, but I feel like adding everything I did at that point in my development
     as a programmer renders that moot.
+
+![toppings.py in action](https://raw.githubusercontent.com/jinshiranai/python_crash_course/master/pcc_chapter5/toppingsdotpy.png)
