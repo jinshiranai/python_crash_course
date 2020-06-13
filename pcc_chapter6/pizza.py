@@ -27,7 +27,7 @@ while choosing_crust == True:
     crust = crust.lower()
 
     if crust in crusts:
-        crust_confirm = input(f"\nYou've chosen {crust} crust, is this correct?(y/n)")
+        crust_confirm = input(f"\nYou've chosen {crust} crust, is this correct?(y/n): ")
         crust_confirm = crust_confirm.lower()
         if crust_confirm == 'y':
             print("Great!")
@@ -50,7 +50,7 @@ while choosing_sauce == True:
     sauce = sauce.lower()
 
     if sauce in sauces:
-        sauce_confirm = input(f"\nYou've chosen {sauce} sauce, is this correct?(y/n)")
+        sauce_confirm = input(f"\nYou've chosen {sauce} sauce, is this correct?(y/n): ")
         sauce_confirm = sauce_confirm.lower()
         if sauce_confirm == 'y':
             print("Great!")
@@ -75,7 +75,7 @@ while choosing_topping == True:
     topping = topping.lower()
 
     if topping in toppings:
-        topping_confirm = input(f"\nYou've chosen {topping}, is this correct?(y/n)")
+        topping_confirm = input(f"\nYou've chosen {topping}, is this correct?(y/n): ")
         topping_confirm = topping_confirm.lower()
         if topping_confirm == 'y':
             print("Great!")
