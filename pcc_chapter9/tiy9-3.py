@@ -35,14 +35,8 @@ user_2 = User('jillian', 'montgomery', 'jillymont421', 'p39nw4hjk2@notabot.biz',
 user_3 = User('rosemary', 'warren', 'rosesformary',
             'rosewaterlikewater@kingdom.gra', 'Gratia', 537)
 
-user_0.describe_user()
-user_0.greet_user()
+user_list = [user_0, user_1, user_2, user_3]
 
-user_1.describe_user()
-user_1.greet_user()
-
-user_2.describe_user()
-user_2.greet_user()
-
-user_3.describe_user()
-user_3.greet_user()
+for user in user_list:
+    user.describe_user()
+    user.greet_user()
