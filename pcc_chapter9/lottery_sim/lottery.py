@@ -9,6 +9,7 @@ class Lottery:
         """Initializes the lottery simulation."""
 
     def lottery_selection(self):
+        """Pulls the numbers for a lottery."""
         lottery_pool = [value for value in range(1, 43)]
         lottery_choice = []
         drawn_number = ''
