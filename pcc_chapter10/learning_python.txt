@@ -1,0 +1,5 @@
+In Python you can simulate lotteries.
+In Python you can take pizza orders.
+In Python you can read files line by line.
+In Python you can create classes and store them in a separate module.
+In Python you can weild ULTIMATE POWER.
