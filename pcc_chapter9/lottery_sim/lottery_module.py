@@ -42,12 +42,6 @@ class Lottery:
                         
         return sorted(user_ticket)
 
-    def user_quit(self):
-        """Measures taken to ensure the user actually wants to quit."""
-        quit_check = input("Are you sure you want to quit?(y/n) ")
-        if quit_check == 'q':
-            quit
-
 
 class AutoLottery(Lottery):
     """Simulates a lottery until jackpot with various ticket conditions."""
@@ -63,13 +57,15 @@ class AutoLottery(Lottery):
         draw_count = 0
 
         print(f"\nYour numbers are: {ticket_numbers}")
+        print("Running simulation...")
 
         while winning_numbers != ticket_numbers:
             draw_count += 1
             winning_numbers = self.lottery_selection()
 
-        print(f"It took {draw_count} draws to win the lottery.")
-        print(f"The winning ticket was: {winning_numbers}")
+        print(f"\nIt took {draw_count} draws to win the lottery.")
+
+        self.replay_loop()
 
     def random_ticket_lottery(self):
         """Simulates playing the lottery with a random ticket every draw."""
@@ -77,13 +73,17 @@ class AutoLottery(Lottery):
         winning_numbers = ''
         draw_count = 0
 
+        print("\nRunning simulation...")
+
         while winning_numbers != ticket_numbers:
             draw_count += 1
             winning_numbers = self.lottery_selection()
             ticket_numbers = self.lottery_selection()
 
-        print(f"It took {draw_count} draws to win the lottery.")
+        print(f"\nIt took {draw_count} draws to win the lottery.")
         print(f"The winning ticket was: {winning_numbers}")
+
+        self.replay_loop()
 
     def lucky_numbers_ticket_lottery(self):
         """
@@ -95,11 +95,16 @@ class AutoLottery(Lottery):
         winning_numbers = ''
         draw_count = 0
 
+        print(f"\nYour numbers are: {ticket_numbers}")
+        print("Running simulation...")
+
         while winning_numbers != ticket_numbers:
             draw_count += 1
             winning_numbers = self.lottery_selection()
             
-        print(f"It took {draw_count} draws to win the lottery.")
+        print(f"\nIt took {draw_count} draws to win the lottery.")
+
+        self.replay_loop()
 
     def every_ticket_user_ticket(self):
         """Every ticket is chosen by the user until jackpot or they quit."""
@@ -123,3 +128,62 @@ class AutoLottery(Lottery):
                 input(f"Winning numbers: {winning_numbers}")
                 print("\nLooks like you didn't win this time.")
                 input(f"Maybe ticket number {draw_count + 1} will be the one!")
+
+    def lottery_style_select_menu(self):
+        """Presents the user with options for how to run the lottery."""
+        input("\n\nHere are your options:")
+        print("\n- 1 - Computer-generated Lucky Numbers:")
+        input("\tThe computer chooses a single ticket for you "
+            "and runs the lottery until you win.")
+
+        print("\n- 2 - Computer-generated Quick Picks:")
+        input("\tThe computer generates a new ticket "
+            "for every draw of the lottery.")
+
+        print("\n- 3 - User-generated Lucky Numbers:")
+        input("\tEnter your own lucky numbers and see just how lucky "
+            "they are!")
+
+        print("\n- 4 - Every Ticket User Ticket:")
+        print("\tBe the master of your own fate and choose your own "
+            "numbers for every draw of the lottery!")
+        input("\t<This mode allows you to save your progress.> "
+            "***NOT YET IMPLEMENTED***")
+
+        style_select_loop = True
+        while style_select_loop:
+            style_selection = input("\n\nSo what will it be? Make your choice "
+                "by entering 1, 2, 3, or 4: ")
+            
+            if style_selection == '1':
+                style_select_loop = False
+                self.single_ticket_lottery()
+            elif style_selection == '2':
+                style_select_loop = False
+                self.random_ticket_lottery()
+            elif style_selection == '3':
+                style_select_loop = False
+                self.lucky_numbers_ticket_lottery()
+            elif style_selection == '4':
+                style_select_loop = False
+                self.every_ticket_user_ticket()
+            else:
+                print("\nI'm sorry, please enter a number from 1 to 4.")
+
+    def user_quit(self):
+        """Measures taken to ensure the user actually wants to quit."""
+        quit_check = input("Are you sure you want to quit?(y/n) ")
+        if quit_check == 'y':
+            print("\nSee You Space Cowboy.")
+            raise SystemExit
+        else:
+            print("Returning to the main menu...")
+            self.lottery_style_select_menu()
+
+    def replay_loop(self):
+        """Loops back to the menu if the user wants to try again."""
+        play_again = input("\nWould you like to run another simulation?(y/n): ")
+        if play_again == 'y':
+            self.lottery_style_select_menu()
+        else:
+            self.user_quit()
