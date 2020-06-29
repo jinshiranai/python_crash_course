@@ -1,4 +1,4 @@
-# COde demonstrating json.load().
+# Code demonstrating json.load().
 
 import json
 
