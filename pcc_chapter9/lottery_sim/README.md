@@ -19,7 +19,7 @@ The second option picks random numbers for every draw of the lottery.
 
 ![lottery sim option 3](readme_pictures/lottery_sim_option3.png)
 
-The third option allows the user to input their own numbers for a single ticket. They lottery is drawn until that ticket wins.
+The third option allows the user to input their own numbers for a single ticket. The lottery is drawn until that ticket wins.
 
 ![lottery sim option 4.1](readme_pictures/lottery_sim_option4_1.png)
 
