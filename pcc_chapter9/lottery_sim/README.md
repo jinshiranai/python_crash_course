@@ -4,33 +4,33 @@ It's finished! Until I learn data analysis, anyway.
 This project is meant as a showcase of everything I learned in the first part (chapters 1-11) of Python Crash Course.
 This lottery simulates an actual lottery from a particular state in the US that I'm intimately familiar with.
 
-[lottery sim screenshot](readme_pictures/lottery_sim.png)
+![lottery sim screenshot](readme_pictures/lottery_sim.png)
 
 On running, the user is presented with four options on how to run the simulation.
 
-[lottery sim option 1](readme_pictures/lottery_sim_option1.png)
+![lottery sim option 1](readme_pictures/lottery_sim_option1.png)
 
 The first option has the computer pick a set of numbers and run until those numbers hit the jackpot.
 It also promps the user as to whether they would like to run another simulation after completion.
 
-[lottery sim option 2](readme_pictures/lottery_sim_option2.png)
+![lottery sim option 2](readme_pictures/lottery_sim_option2.png)
 
 The second option picks random numbers for every draw of the lottery.
 
-[lottery sim option 3](readme_pictures/lottery_sim_option3.png)
+![lottery sim option 3](readme_pictures/lottery_sim_option3.png)
 
 The third option allows the user to input their own numbers for a single ticket. They lottery is drawn until that ticket wins.
 
-[lottery sim option 4.1](readme_pictures/lottery_sim_option4_1.png)
+![lottery sim option 4.1](readme_pictures/lottery_sim_option4_1.png)
 
 Option four is where the bulk of the work comes in. Not only is the user allowed to chose their own numbers, but they do so for every draw of the lottery.
 It continues until the user either hits the jackpot or quits.
 
-[lottery sim option 4.2](readme_pictures/lottery_sim_option4_2.png)
+![lottery sim option 4.2](readme_pictures/lottery_sim_option4_2.png)
 
 Since that could possibly take forever, I added the ability for the user to save their progress on quit. The file is saved in JSON format.
 
-[lottery sim option 4.3](readme_pictures/lottery_sim_option4_3.png)
+![lottery sim option 4.3](readme_pictures/lottery_sim_option4_3.png)
 
 Of course, the user can choose to load their progress on return, or start again from zero if they so choose.
 
