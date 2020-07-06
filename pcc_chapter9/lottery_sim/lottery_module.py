@@ -81,8 +81,8 @@ class Lottery:
             save_quit = input("\nWould you like to save your progress?(y/n): ")
             if save_quit == 'y':
                 # Confirm overwrite.
-                save_overwrite = input("Saving will overrite the previous save."
-                    " Is this okay?(y/n): ")
+                save_overwrite = input("Saving will overwrite the previous "
+                    "save. Is this okay?(y/n): ")
                 if save_overwrite == 'y':
                     self.create_save_file()
                     verify_save = False
