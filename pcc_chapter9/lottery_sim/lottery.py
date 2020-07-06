@@ -19,8 +19,7 @@ input("\tEnter your own lucky numbers and see just how lucky they are!")
 print("\n- 4 - Every Ticket User Ticket:")
 print("\tBe the master of your own fate and choose your own "
             "numbers for every draw of the lottery!")
-input("\t<This mode allows you to save your progress.> "
-            "***NOT YET IMPLEMENTED***")
+input("\t<This mode allows you to save your progress.>")
 
 # Begin the simulation.
 lottery = lottery_module.Lottery()
