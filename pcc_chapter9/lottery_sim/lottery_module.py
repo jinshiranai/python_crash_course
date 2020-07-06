@@ -68,9 +68,11 @@ class Lottery:
             with open(filename) as f:
                 loaded_save = json.load(f)            
         except FileNotFoundError:
+            print("There's no data to load!")
             return 0
         else:
-            return int(loaded_save)
+            print("Progress loaded!")
+            return int(loaded_save)            
 
     def user_ticket_quit(self):
         """Quit path for quitting during number selection to prompt saving."""
@@ -203,7 +205,6 @@ class Lottery:
             if load_confirm == 'y':
                 self.draw_count = self.load_save_file()            
                 self.data_loaded = True
-                print("Progress loaded!")
             else:
                 self.draw_count = 0
     
