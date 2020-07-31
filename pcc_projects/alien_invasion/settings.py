@@ -27,7 +27,7 @@ class Settings:
         #self.fleet_direction = 1
 
         # How quickly the game speeds up.
-        self.speedup_scale = 1.2
+        self.speedup_scale = 1.15
 
         # How quickly the alien point values increase.
         self.score_scale = 1.5

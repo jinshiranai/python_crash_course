@@ -80,7 +80,13 @@ class AlienInvasion:
             self.stats.save_high_score()
             sys.exit()
         elif event.key == pygame.K_SPACE:
-            self._fire_bullet()
+            if not self.stats.game_active:
+                self._start_ai_game()
+            else:
+                self._fire_bullet()
+        elif event.key == pygame.K_RETURN:
+            if not self.stats.game_active:
+                self._start_ai_game()
 
     def _check_keyup_events(self, event):
         """Respond to key releases."""
@@ -93,24 +99,28 @@ class AlienInvasion:
         """Start a new game when the player clicks Play."""
         button_clicked = self.play_button.rect.collidepoint(mouse_pos)
         if button_clicked and not self.stats.game_active:
-            # Reset the game settings.
-            self.settings.initialize_dynamic_settings()
-            self.stats.reset_stats()
-            self.stats.game_active = True
-            self.sb.prep_score()
-            self.sb.prep_level()
-            self.sb.prep_ships()
+            self._start_ai_game()
 
-            # Get rid of any remaining aliens and bullets.
-            self.aliens.empty()
-            self.bullets.empty()
+    def _start_ai_game(self):
+        """Start the game."""
+        # Reset the game settings.
+        self.settings.initialize_dynamic_settings()
+        self.stats.reset_stats()
+        self.stats.game_active = True
+        self.sb.prep_score()
+        self.sb.prep_level()
+        self.sb.prep_ships()
 
-            # Create a new fleet and center the ship.
-            self._create_fleet()
-            self.ship.center_ship()
+        # Get rid of any remaining aliens and bullets.
+        self.aliens.empty()
+        self.bullets.empty()
 
-            # Hide the mouse cursor.
-            pygame.mouse.set_visible(False)
+        # Create a new fleet and center the ship.
+        self._create_fleet()
+        self.ship.center_ship()
+
+        # Hide the mouse cursor.
+        pygame.mouse.set_visible(False)
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
@@ -184,14 +194,21 @@ class AlienInvasion:
             self.sb.check_high_score()
 
         if not self.aliens:
-            # Destroy existing bullets and create new fleet.
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
+            self._prep_next_level()
 
-            # Increase level.
-            self.stats.level += 1
-            self.sb.prep_level()
+    def _prep_next_level(self):
+        """Prepare the next level of AI after clearing a wave."""
+        # Destroy existing bullets and create new fleet.
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+
+        # Increase level.
+        self.stats.level += 1
+        self.sb.prep_level()
+
+        # Pause before creating the next wave.
+        sleep(1.5)
 
     def _update_aliens(self):
         """
