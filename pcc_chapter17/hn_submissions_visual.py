@@ -23,12 +23,16 @@ for submission_id in submission_ids[:30]:
     response_dict = r.json()
 
     # Build a dictionary for each article.
-    submission_dict = {
-        'title': response_dict['title'],
-        'hn_link': f"http://news.ycombinator.com/item?id={submission_id}",
-        'comments': response_dict['descendants'],
-    }
-    submission_dicts.append(submission_dict)
+    try:
+        submission_dict = {
+            'title': response_dict['title'],
+            'hn_link': f"http://news.ycombinator.com/item?id={submission_id}",
+            'comments': response_dict['descendants'],
+        }
+    except KeyError:
+        continue
+    else:
+        submission_dicts.append(submission_dict)
 
 submission_dicts = sorted(submission_dicts, key=itemgetter('comments'),
                             reverse=True)
@@ -50,7 +54,7 @@ data = [{
     'type': 'bar',
     'x': sub_urls,
     'y': sub_comments,
-    'hovertext': {'color': 'rgb(255, 255, 255)'},
+    'hoverlabel': {'bgcolor': 'rgb(255, 200, 180)'},
     'marker': {'color': 'rgb(255, 102, 0)'},
     'opacity': 0.8,
 }]
