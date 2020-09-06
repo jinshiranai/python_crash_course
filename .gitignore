@@ -4,4 +4,4 @@ test_file.py
 user_save.json
 ll_env/
 db.sqlite3
-learning_log/settings.py
+settings.py
