@@ -42,7 +42,7 @@ data = [{
 }]
 
 my_layout = {
-    'title': f'Most-Starred {language} Projects on GitHub',
+    'title': f'Most-Starred {language.title()} Projects on GitHub',
     'titlefont': {'size': 28},
     'xaxis': {
         'title': 'Repository',
