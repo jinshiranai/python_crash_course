@@ -3,5 +3,5 @@ pcc_supplement
 test_file.py
 user_save.json
 ll_env/
-db.sqlite3
+*.sqlite3
 settings.py
