@@ -1,7 +1,6 @@
-__pycache__
+__pycache__/
 pcc_supplement
 test_file.py
 user_save.json
 ll_env/
 *.sqlite3
-settings.py
