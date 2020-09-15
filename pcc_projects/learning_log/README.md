@@ -18,7 +18,7 @@ New Topic Page
 ![new topic](add_topic.png)
 
 Topic Page
-![topic](topic.png)
+![topic](topic_page.png)
 
 New Entry Page
 ![new entry](new_entry.png)
