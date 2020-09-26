@@ -22,5 +22,6 @@ print("\tBe the master of your own fate and choose your own "
 input("\t<This mode allows you to save your progress.>")
 
 # Begin the simulation.
-lottery = lottery_module.Lottery()
-lottery.lottery_style_select_menu()
+if __name__ == '__main__':
+    lottery = lottery_module.Lottery()
+    lottery.lottery_style_select_menu()
