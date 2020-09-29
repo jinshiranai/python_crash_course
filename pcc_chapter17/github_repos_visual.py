@@ -1,9 +1,12 @@
 import requests
+import urllib.parse
+import re
 
 from plotly.graph_objs import Bar
 from plotly import offline
 
 language = input("Language: ")
+langauge = urllib.parse.urlencode({'language': language})
 
 # Make an API call and store the response.
 url = f'https://api.github.com/search/repositories?q=language:{language}&sort=stars'
@@ -57,4 +60,7 @@ my_layout = {
 }
 
 fig = {'data': data, 'layout': my_layout}
-offline.plot(fig, filename=f'{language}_repos.html')
+
+# Remove whitespace from languages with whitespace.
+no_spaces = re.compile(r'\s')
+offline.plot(fig, filename=f'{no_spaces.sub("_", language.lower())}_repos.html')
